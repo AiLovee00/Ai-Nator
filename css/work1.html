@@ -1,0 +1,167 @@
+<<!DOCTYPE html>
+<head><meta name="viewport" content="width=device-width, initial-scale=1"></head>
+<html>
+ <style>
+   * {
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.container {
+  position: relative;
+  width: 1160px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  transform-style: preserve-3d;
+  perspective: 500px;
+  margin: auto;
+}
+.container .box {
+  position: relative;
+  width: 275px;
+  height: 275px;
+  background: #000;
+  transition: 0.5s;
+  transform-style: preserve-3d;
+  overflow: hidden;
+  margin-right: 15px;
+  margin-top: 45px;
+}
+.container:hover .box {
+  transform: rotateY(25deg);
+}
+.container .box:hover ~ .box {
+  transform: rotateY(-25deg);
+}
+.container .box:hover {
+  transform: rotateY(0deg) scale(1.25);
+  z-index: 1;
+  box-shadow: 0 25px 40px rgba(0,0,0,0.5);
+}
+.container .box .imgBx {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.container .box .imgBx:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg,#3c3839,#000);
+  z-index: 1;
+  opacity: 0;
+  transition: 0.5s;
+  mix-blend-mode: multiply;
+}
+.container .box:hover .imgBx:before {
+  opacity: 1;
+}
+.container .box .imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.container .box .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  padding: 20px;
+  align-items: flex-end;
+  box-sizing: border-box;
+}
+.container .box .content h2 {
+  color: #fff;
+  transition: 0.5s;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  font-size: 20px;
+  transform: translateY(200px);
+  transition-delay: 0.3s;
+}
+.container .box:hover .content h2 {
+  transform: translateY(0px);
+}
+.container .box .content p {
+  color: #fff;
+  transition: 0.5s;
+  font-size: 14px;
+  transform: translateY(200px);
+  transition-delay: 0.4s;
+}
+.container .box:hover .content p {
+  transform: translateY(0px);
+}
+ </style>
+<body>
+  <div class="container">
+  <div class="box">
+    <div class="imgBx">
+      <img src="1.jpg">
+    </div>
+    <div class="content">
+      <div>
+        <h2>Eye</h2>
+        <p>I love making eye arts. As a child, I would spend hours drawing eyes and experimenting with different colors and shapes. Now, as an adult, I still find joy in creating intricate eye makeup looks and admiring the beauty of the human eye. It's a small passion that brings me happiness every day.
+
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="box">
+    <div class="imgBx">
+      <img src="2.jpg">
+    </div>
+    <div class="content">
+      <div>
+        <h2>A Horse in The Waves</h2>
+        <p>This concept is based on the song Exist for Love by Aurora.
+          "And when you say my nameLike white horses on the wavesI think it feels the same.As an ocean in my veins And you'll be diving in.Like nothing is out of place.And we exist for love Only for love"
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="box">
+    <div class="imgBx">
+      <img src="4.jpg">
+    </div>
+    <div class="content">
+      <div>
+        <h2>Porcelain</h2>
+        <p>I love cute teapots. As a child, I would spend hours playing tea party with my dolls and stuffed animals. My favorite part was choosing which teapot to use for each guest. Now as an adult, I have a collection of adorable teapots that bring me joy every time I use them for a cup of tea.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="box">
+    <div class="imgBx">
+      <img src="5.jpg">
+    </div>
+    <div class="content">
+      <div>
+        <h2>Teapot</h2>
+        <p> I love cute teapots. As a child, I would spend hours playing tea party with my dolls and stuffed animals. My favorite part was choosing which teapot to use for each guest. Now as an adult, I have a collection of adorable teapots that bring me joy every time I use them for a cup of tea.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

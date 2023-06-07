@@ -1,0 +1,233 @@
+
+<html>
+    <head><link rel="icon" type="image/png" href="css/ie.png"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><title>MENU</title>
+<style>
+@font-face {
+  font-family: Vonique;
+  src: url(css/Vonique.otf);
+}   
+  *{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+
+
+:root {
+    font-size: calc(1vw + 1vh + .5vmin);
+}
+
+body {
+    width:100%;
+    min-height: 100vh;
+    overflow: hidden;
+    font: 3rem brandon grotesque;
+    animation: fadein 2s;
+    font-family: Vonique;
+    overflow: hidden;
+}
+}
+a{
+    text-decoration: none;
+}
+h1{
+    font-family: Vonique;
+}
+h4{
+    font-family: Vonique;
+    text-align: center;
+}
+[data-page]{
+    position: fixed;
+    width: 100%;
+    min-height: 100vh;
+    transform: translate3d(100%, 0, 0);
+    opacity: 0;
+    transition: transform 0.5s ease-in, opacity 0.5s ease-in; 
+    z-index: 10;
+}
+[data-page="home"]{
+    position:fixed;
+    background-color: rgb(136,173,81);
+     background-size: 100% 120%;
+  transition: opacity 0.5s;
+    color: #FFF;
+}
+[data-page="profile"]{
+    background: rgb(136,173,81);
+background: linear-gradient(180deg,rgba(136,173,81,1) 8%, rgba(115,149,89,1) 50%, rgba(136,173,81,1) 94%);
+    color: #fff;
+}
+[data-page="works"]{
+    background-color: #b35800;
+    background: linear-gradient(180deg, rgba(166,101,29,1) 8%, rgba(227,149,63,1) 50%, rgba(166,101,29,1) 94%);
+    color: #fff;
+}
+[data-page="art"]{
+background: linear-gradient(180deg, rgba(166,101,29,1) 8%, rgba(227,149,63,1) 50%, rgba(166,101,29,1) 94%);
+    color: #fff;
+}
+[data-page="art2"]{
+background: linear-gradient(180deg, rgba(166,101,29,1) 8%, rgba(227,149,63,1) 50%, rgba(166,101,29,1) 94%);
+    color: #fff;
+}
+[data-page="more"]{
+background: linear-gradient(180deg, rgba(166,101,29,1) 8%, rgba(227,149,63,1) 50%, rgba(166,101,29,1) 94%);
+    color: #fff;
+}
+[data-page="photog"]{
+background: linear-gradient(180deg, rgba(166,101,29,1) 8%, rgba(227,149,63,1) 50%, rgba(166,101,29,1) 94%);
+    color: #fff;
+}
+[data-page="blog"]{
+    background: rgb(136,173,81);
+background: linear-gradient(180deg,rgba(136,173,81,1) 8%, rgba(115,149,89,1) 50%, rgba(136,173,81,1) 94%);
+    color: #fff;
+}
+[data-page="galler"]{
+    background: rgb(136,173,81);
+background: linear-gradient(180deg,rgba(136,173,81,1) 8%, rgba(115,149,89,1) 50%, rgba(136,173,81,1) 94%);
+    color: #fff;
+}
+[data-page].active{
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+    z-index: 100;
+}
+[data-role="link"]{
+    color: white;
+}
+section h1{
+    color: black;
+    margin-top: 10;
+    text-align: center;
+}
+section p{
+    padding: 1rem 2rem;
+}
+
+@media screen and (min-width: 600px){
+    body {
+    width:100%;
+    min-height: 100vh;
+    overflow: hidden;
+    font: 1.5rem brandon grotesque;
+    overflow: hidden;
+    animation: fadein 2s;
+    font-family: Vonique;
+}
+}
+
+</style>
+<script>
+ var app = (function(){
+    let pages = [];
+    let links = [];
+    
+    document.addEventListener("DOMContentLoaded", function(){
+        pages = document.querySelectorAll('[data-page]');
+        links = document.querySelectorAll('[data-role="link"]');
+      
+        [].forEach.call(links, function(link){
+            link.addEventListener("click", navigate)
+        });
+    });
+    
+    function navigate(ev){
+        ev.preventDefault();
+        let id = ev.currentTarget.href.split("#")[1];
+        [].forEach.call(pages, function(page){
+           if(page.id ===id){
+               page.classList.add('active');
+           }else{
+               page.classList.remove('active');
+           } 
+        });
+        return false;
+    }
+    
+    return {
+        pages,
+        links,
+        xhr: ajax
+    }
+})(); 
+
+</script>
+
+</head><body>
+    <container>
+    <section data-page="home" id="home" class="active"><br>
+        <h1>Menu</h1><center><br>
+        <p><a href="#profile" data-role="link">About Me</a></p>
+        <p><a href="#works" data-role="link">Works</a></p>
+        <p><a href="#blog" data-role="link">Blog</a></p>
+        <p><a href="index.html" style="color: #fff;">Home</a></p>
+    </center>
+</container>
+    </section>
+
+    <section data-page="profile" id="profile"><a href="#home" data-role="link" title="Go Back"><img style="margin-top: 20; margin-left: 10;" src="css/back.png" width="30" height="30" ; alt="back to menu" style="margin-left: 30;"></a>
+        <h1>Profile</h1><center>
+    <a href="https://www.facebook.com/aiii.les" target="_blank" ;="" title="Click to Visit"><img src="css/profile.jpg" width="120" height="120" ;="" style="border-radius: 180px" alt="Ailes Nator"></a></center>
+     <pre style="font-size: 15px; justify-content: center;"><p>Name:           <u>Ailes Nator</u>
+Age:            <u>21</u>
+Address:        <u>Quiot Pardo, Cebu City</u>
+Birthdate:      <u>May 4, 2001</u>
+Birthplace:     <u>Cebu City</u>
+Religion:       <u>Jehovah's Witness</u>
+Nationality:        <u>Filipino</u>
+</p><p style="font-family: Arial Black">SKILLS &amp; EXPERTISE:</p>    ~ <u>Creativity</u>
+    ~ <u>Active Listening</u>
+    ~ <u>Designing</u> </pre> <center>
+
+<p><a style=" font-family: Vonique; font-size: 20px;" href="#galler" data-role="link">View My Photos</a></p></center>
+</section>
+
+<section data-page="galler" id="galler" ><pre>
+       
+  <a href="#profile" data-role="link" title="Go Back"><img src="css/back.png" width="30" height="30" ; alt="back"></a><h4>Me</h4><iframe src="css/gallery.html" frameborder="none" height="900" width="100%"></iframe>
+</section></pre>
+
+<section data-page="works" id="works" ><h1>My Works</h1>
+     <center><br>
+     <p><a href="#art" data-role="link">Arts</a></p>
+     <p><a href="#art2" data-role="link">Digital Arts</a></p>
+     <p><a href="#photog" data-role="link">Photography</a></p>
+     <p><a href="#home" data-role="link"><u>Back to Menu</u></a></p>
+     </center></section>
+
+<section data-page="art" id="art"><pre>  
+  <a href="#works" data-role="link" title="Go Back"><img src="css/back.png" width="30" height="30" ; alt="back"></a><h4>Traditional Arts</h4><iframe src="css/work1.html" frameborder="none" height="500" width="100%"></iframe>
+</pre></section>
+
+<section data-page="art2" id="art2"><pre>  
+  <a href="#works" data-role="link" title="Go Back"><img src="css/back.png" width="30" height="30" ;alt="back"></a><h4>Digital Arts</h4><a style="text-decoration: none;" href="#more" data-role="link" title="More">  <img style="position:absolute;" src="css/forward.png" width="30" height="30" ; alt="more"; justify-content="center"></h1></a><h1><iframe src="css/work2.html" frameborder="none" height="500" width="100%"></iframe>
+</pre></section>
+<section data-page="more" id="more"><pre>
+
+  <a href="#works" data-role="link" title="Go Back"><img src="css/back.png" width="30" height="30" alt="back"></a><h4>Digital Arts</h4><a href="#more" data-role="link" title="More"></a><iframe src="css/more.html" frameborder="none" height="500" width="100%"></iframe></section></pre>
+<section data-page="photog" id="photog"><pre> 
+  <a style="text-decoration: none;" href="#works" data-role="link" title="Go Back"><img src="css/back.png" width="30" height="30" ;alt="back"></a><h4>Photography</h4><iframe src="css/photo.html" frameborder="none" height="500" width="100%"></iframe></pre></section>
+
+<section data-page="blog" id="blog"><h1>About</h1>
+    <p style="text-align: justify; font-size: 15px; font-family: GeosansLight;">As a creative professional, I have always been passionate about showcasing my work and skills to potential clients and employers. However, in today's digital age, it is not enough to simply have a physical portfolio or resume. This is why I decided to create a portfolio webpage.</p>
+
+    <p style="text-align: justify; font-size: 15px; font-family: GeosansLight;">Firstly, having a portfolio webpage allows me to reach a wider audience. With the internet being accessible to almost everyone, my work can be viewed by people from all over the world. This increases my chances of getting noticed by potential clients or employers. Secondly, having a portfolio webpage allows me to showcase my work in an organized and professional manner. I can categorize my work according to different projects or skills and provide detailed descriptions of each project. This gives viewers a better understanding of what I am capable of and what kind of work they can expect from me. Lastly, having a portfolio webpage allows me to constantly update my work as I progress in my career. It serves as an online resume that is easily accessible and can be updated at any time.</p>
+    
+    <p style="text-align: justify; font-size: 15px; font-family: GeosansLight;">Overall, creating a portfolio webpage has been essential for me as it has allowed me to showcase my work effectively and reach more people than ever before.</p>
+    
+<p style="text-align: justify; font-size: 15px; font-family: GeosansLight;">Ai Nator is a webpage that serves as a portfolio of a hand's work. This webpage is also a requirement for the 2nd semester of SY 2022-2023, BSGD 3 A.
+</p></pre></section>
+</body></html>

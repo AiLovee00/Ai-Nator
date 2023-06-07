@@ -1,0 +1,165 @@
+<<!DOCTYPE html>
+<head><meta name="viewport" content="width=device-width, initial-scale=1"></head>
+<html>
+ <style>
+   * {
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.container {
+  position: relative;
+  width: 1160px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  transform-style: preserve-3d;
+  perspective: 500px;
+  margin: auto;
+}
+.container .box {
+  position: relative;
+  width: 275px;
+  height: 275px;
+  background: #000;
+  transition: 0.5s;
+  transform-style: preserve-3d;
+  overflow: hidden;
+  margin-right: 15px;
+  margin-top: 45px;
+}
+.container:hover .box {
+  transform: rotateY(25deg);
+}
+.container .box:hover ~ .box {
+  transform: rotateY(-25deg);
+}
+.container .box:hover {
+  transform: rotateY(0deg) scale(1.25);
+  z-index: 1;
+  box-shadow: 0 25px 40px rgba(0,0,0,0.5);
+}
+.container .box .imgBx {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.container .box .imgBx:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg,#3c3839,#000);
+  z-index: 1;
+  opacity: 0;
+  transition: 0.5s;
+  mix-blend-mode: multiply;
+}
+.container .box:hover .imgBx:before {
+  opacity: 1;
+}
+.container .box .imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.container .box .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  padding: 20px;
+  align-items: flex-end;
+  box-sizing: border-box;
+}
+.container .box .content h2 {
+  color: #fff;
+  transition: 0.5s;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  font-size: 20px;
+  transform: translateY(200px);
+  transition-delay: 0.3s;
+}
+.container .box:hover .content h2 {
+  transform: translateY(0px);
+}
+.container .box .content p {
+  color: #fff;
+  transition: 0.5s;
+  font-size: 14px;
+  transform: translateY(200px);
+  transition-delay: 0.4s;
+}
+.container .box:hover .content p {
+  transform: translateY(0px);
+}
+ </style>
+<body>
+  <div class="container">
+  <div class="box">
+    <div class="imgBx">
+      <img src="d1.jpg">
+    </div>
+    <div class="content">
+      <div>
+        <h2>Hayley Williams</h2>
+        <p>Hayley Williams is the vocalist of the band "Paramore".
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="box">
+    <div class="imgBx">
+      <img src="d2.jpg">
+    </div>
+    <div class="content">
+      <div>
+        <h2>Avril</h2>
+        <p>Avril Lavigne 
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="box">
+    <div class="imgBx">
+      <img src="d3.jpg">
+    </div>
+    <div class="content">
+      <div>
+        <h2>Girl</h2>
+        <p>I remember the day I made a portrait of a lady with a beautiful face. Her features were delicate, her eyes sparkled with life, and her smile was infectious. I realized the power of art to capture not just an image but also a feeling, a memory, and a connection between two people.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="box">
+    <div class="imgBx">
+      <img src="d4.jpg">
+    </div>
+    <div class="content">
+      <div>
+        <h2>Girl 2</h2>
+        <p>As an artist, I always strive to capture the essence of my subjects. When I made a portrait of a lady with a beautiful face, I was captivated by her elegance and grace. The way her eyes sparkled and her smile lit up the room was truly mesmerizing. It was an honor to immortalize her beauty on canvas.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
